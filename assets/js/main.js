@@ -399,3 +399,18 @@
 					});
 
 })(jQuery);
+
+document.addEventListener('DOMContentLoaded', function () {
+	document.getElementById('contact-form').addEventListener('submit', function(event) {
+	  event.preventDefault(); // Prevent the default form submission
+		console.log("attempting send")
+	  console.log(this)
+	  emailjs.sendForm('portfolio3103', 'template_to_me', this)
+		.then(function() {
+		  alert('Message sent successfully!');
+		}, function(error) {
+		  alert('Failed to send message. Please try again later.');
+		});
+	});
+  });
+  
