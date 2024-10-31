@@ -398,58 +398,58 @@
 //AR CAPTCHA
 
 
-document.addEventListener('DOMContentLoaded', function () {
-	document.getElementById('contact-form').addEventListener('submit', function(event) {
-	  event.preventDefault();
-	  const form = event.target; // Reference to the form element
-  
-	  grecaptcha.ready(function() {
-		grecaptcha.execute('6Ldoy3AqAAAAAKiA3FCTDYX4mr-Gt0kNCU3NqOjL', { action: 'submit' }).then(function(token) {
-		  fetch('127.0.0.1/verify-recaptcha', {
-			mode: 'cors',
-			method: 'POST',	
-			headers: {
-			  'Content-Type': 'application/json; charset=utf-8',
-			},
-			body: JSON.stringify({ token: token }),
-		  })
-		  .then(response => response.json())
-		  .then(data => {
-			if (data.success) { 
-			  emailjs.sendForm('portfolio3103', 'template_to_me', form)
-				.then(function() {
-				  alert('Message sent successfully!');
-				}, function(error) {
-				  alert('Failed');
-				});
-			} else {
-			  alert('reCAPTCHA verification failed.');
-			}
-		  })
-		  .catch(() => {
-			alert('Server error');
-		  });
-		});
-	  });
-	});
-  });
-
-
-  // BEZ CAPTCHA
-
-  
 // document.addEventListener('DOMContentLoaded', function () {
 // 	document.getElementById('contact-form').addEventListener('submit', function(event) {
 // 	  event.preventDefault();
-// 		console.log("attempting send")
-// 	  console.log(this)
-// 	  emailjs.sendForm('portfolio3103', 'template_to_me', this)
-// 		.then(function() {
-// 		  alert('Message sent successfully!');
-// 		}, function(error) {
-// 		  alert('Failed to send message. Please try again later.');
+// 	  const form = event.target;
+  
+// 	  grecaptcha.ready(function() {
+// 		grecaptcha.execute('6Ldoy3AqAAAAAKiA3FCTDYX4mr-Gt0kNCU3NqOjL', { action: 'submit' }).then(function(token) {
+// 		  fetch('127.0.0.1:5501/verify-recaptcha', {
+// 			mode: 'cors',
+// 			method: 'POST',	
+// 			headers: {
+// 			  'Content-Type': 'application/json; charset=utf-8',
+// 			},
+// 			body: JSON.stringify({ token: token }),
+// 		  })
+// 		  .then(response => response.json())
+// 		  .then(data => {
+// 			if (data.success) { 
+// 			  emailjs.sendForm('portfolio3103', 'template_to_me', form)
+// 				.then(function() {
+// 				  alert('Message sent successfully!');
+// 				}, function(error) {
+// 				  alert('Failed');
+// 				});
+// 			} else {
+// 			  alert('reCAPTCHA verification failed.');
+// 			}
+// 		  })
+// 		  .catch(() => {
+// 			alert('Server error');
+// 		  });
 // 		});
+// 	  });
 // 	});
 //   });
+
+
+//   BEZ CAPTCHA strada good
+
+  
+document.addEventListener('DOMContentLoaded', function () {
+	document.getElementById('contact-form').addEventListener('submit', function(event) {
+	  event.preventDefault();
+		console.log("attempting send")
+	  console.log(this)
+	  emailjs.sendForm('portfolio3103', 'template_to_me', this)
+		.then(function() {
+		  alert('Message sent successfully!');
+		}, function(error) {
+		  alert('Failed to send message. Please try again later.');
+		});
+	});
+  });
   
   
