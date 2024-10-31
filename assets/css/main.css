@@ -33,6 +33,83 @@ body {
 	line-height: 1;
 }
 
+/* Styles for the repository boxes */
+.repo-boxes {
+    display: flex;
+    gap: 1rem; /* Adjusts spacing between boxes */
+    margin-top: 1rem; /* Adds space above the boxes */
+}
+#skills {
+    text-align: center;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjusts to fit the screen */
+    gap: 1.5rem;
+    justify-items: center;
+    margin-top: 1.5rem;
+}
+
+.skill-card {
+    background: #1b9098;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 180px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: #4a90e2; 
+    margin-bottom: 0.5rem;
+}
+
+.skill-card h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.progress-bar {
+    background: #eb4a4a;
+    border-radius: 5px;
+    width: 100%;
+    height: 8px;
+    margin-top: 0.5rem;
+}
+
+.progress {
+    background: #4a90e2;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.repo-box {
+    flex: 1; /* Makes boxes equal width */
+    padding: 1rem;
+    text-align: center;
+    background-color: #3baeb9;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.repo-box:hover {
+    background-color: #e0e0e0;
+}
+
+.repo-box span {
+    font-weight: bold;
+}
+
+
 ol, ul {
 	list-style: none;
 }
@@ -1140,9 +1217,12 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto, 256px 256px;
-			background-position: center, center;
-			background-repeat: no-repeat, repeat;
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
 			z-index: 2;
 		}
 
